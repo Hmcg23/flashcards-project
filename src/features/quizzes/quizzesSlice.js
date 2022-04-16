@@ -20,13 +20,13 @@ const quizzesSlice = createSlice({
 })
 
 // selector
-export const selectQuiz = state => state.quizzes.quizzes;
+export const selectQuizzes = state => state.quizzes.quizzes;
 // reducer
 export default quizzesSlice.reducer;
 // action creator
 export const { addQuiz } = quizzesSlice.actions;
 
-export const createQuizFromId = (payload) => {
+export const createQuizTopicId = (payload) => {
     const { quizId, topicId } = payload;
     return (dispatch) => {
       dispatch(addQuiz(payload));
