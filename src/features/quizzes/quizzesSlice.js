@@ -27,10 +27,10 @@ export const quizzesReducer = quizzesSlice.reducer;
 export const { addQuiz } = quizzesSlice.actions;
 
 export const createQuizFromId = (payload) => {
-    const { name, topicId, cardIds, id} = payload;
+    const { quizId, topicId } = payload;
     return (dispatch) => {
-      dispatch(addQuiz({id: id, name: name, topicId: topicId, cardIds: cardIds}));
-      dispatch(addQuizId({topicId: topicId, id: id}));
+      dispatch(addQuiz(payload));
+      dispatch(addQuizId({topicId: topicId, quizId: quizId}));
     };
 };
 
